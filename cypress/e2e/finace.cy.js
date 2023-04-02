@@ -5,7 +5,7 @@ context('Dev Finance', () => {
         cy.visit('https://devfinance-agilizei.netlify.app/#')
         cy.get('#data-table tbody tr').should('have.length',0)  
     });
-    it('Cadastrar entrada', () => {
+    it('Cadastrar entrada', {tags: 'critico'}, () => {
        // enteneder o fluxo manualment
        //mapear os elementos que vamos interagir
        // decrever as interações com o cypress
@@ -20,7 +20,7 @@ context('Dev Finance', () => {
        cy.get('#data-table tbody tr').should('have.length',1)     
     });
     //Cadastrar saidas
-    it('Cadastrar saidas', () => {
+    it('Cadastrar saidas', {tags: 'smoke'}, () => {
 
         cy.get('#transaction .button').click()
         cy.get('#description').type('Mesada')

@@ -1,4 +1,4 @@
-import { addItens, pesquisaritens } from "./utils";
+import { addItens, pesquisaritens } from "../utils";
 
 describe('Carrinho de compras', () => {
 
@@ -8,7 +8,7 @@ describe('Carrinho de compras', () => {
     
   });
 
-  it.only('Cenario 1', () => {
+  it('Cenario 1', {tags: 'xbosS' }, () => {
     //- Pesquise um produto de sua preferência
     cy.get('[name = field-keywords]').type('Xbox Series S')
     cy.get('[value = Ir]').click()
@@ -27,7 +27,7 @@ describe('Carrinho de compras', () => {
     
   })
 
-  it('Cenario 2', () => {
+  it('Cenario 2', {tags: 'validarCarrinho'}, () => {
     //- Adicione o 3 produto no carrinho
     // pesquisando produto
     pesquisaritens('Livros')
@@ -51,10 +51,6 @@ describe('Carrinho de compras', () => {
       .then(texto => {
     const valorTotal = parseFloat(texto.replace('R$', '').replace(',', '.'))
     expect(valorTotal).to.equal(236.94) // valor esperado
-})
-
-    
+})    
   });
-
-
 })

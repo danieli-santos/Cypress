@@ -1,5 +1,5 @@
 describe('Cadastro', () => {
-  it('Cenario 1', () => {
+  it('Cenario 1', {tags: 'Cadastro'}, () => {
     //- Acesse https://www.amazon.com.br/
     cy.visit('https://www.amazon.com.br/')  
     //- Acesse a página para criar uma nova conta
