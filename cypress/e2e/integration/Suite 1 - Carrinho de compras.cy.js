@@ -1,4 +1,4 @@
-import { addItens, pesquisaritens } from "../utils";
+import { addItens, pesquisaritens } from "../utils/utils";
 
 describe('Carrinho de compras', () => {
 
