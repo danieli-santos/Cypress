@@ -1,4 +1,4 @@
-import {cadastro} from '../utils'
+import {cadastro} from '../utils/utils'
 describe('Cadastro', () => {
 
   beforeEach(() => {
