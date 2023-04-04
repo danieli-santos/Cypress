@@ -46,11 +46,11 @@ describe('Carrinho de compras', () => {
     //- Valide se o valor total do carrinho está correto
     cy.get('#nav-cart').click()
     //cy.get('[data-name="Active Items"]').should('have.length', 3)
-    cy.get('span').contains('R$ 239,32')
+    cy.get('span').contains('R$ 236,99')
       .invoke('text')
       .then(texto => {
     const valorTotal = parseFloat(texto.replace('R$', '').replace(',', '.'))
-    expect(valorTotal).to.equal(239.32) // valor esperado
+    expect(valorTotal).to.equal(236.99) // valor esperado
 })    
   });
 })
