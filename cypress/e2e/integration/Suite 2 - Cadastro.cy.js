@@ -18,14 +18,14 @@ describe('Cadastro', () => {
     cy.get('span').contains('Continuar').should('have.text', 'Continuar')
   })
 
-  it('Cenario 2 - Email invalido', () => {
+  it('Cenario 2 - Email invalido',{tags: 'smoke'}, ()  => {
     cadastro('danieli', 'danielihotmail.com', '993594@D', '993594@D')
     cy.get('#continue').click()
     cy.xpath("//div[@class='a-alert-content'][contains(.,'Endereço de e-mail ou número de telefone celular errado ou inválido. Corrija e tente novamente.')]").should('have.text', '\n  Endereço de e-mail ou número de telefone celular errado ou inválido. Corrija e tente novamente.\n')
 
   });
 
-  it('Cenario 3 - Telefone invalido', () => {
+  it('Cenario 3 - Telefone invalido', {tags: 'smoke'}, () => {
     cadastro('danieli', '999999', '993594@D', '993594@D')
     cy.get('#continue').click()
     //cy.get('h1').contains('Verificar o número do telefone celular').should('have.text', 'Verificar o número do telefone celular')
