@@ -1,5 +1,5 @@
-export function pesquisaritens(livros) {
-    cy.get('[name = field-keywords]').type(livros)
+export function pesquisaritens(nomeIten) {
+    cy.get('[name = field-keywords]').type(nomeIten)
     cy.get('[value = Ir]').click()
     
 }
